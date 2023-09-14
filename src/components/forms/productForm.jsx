@@ -3,6 +3,7 @@ import { Button, Form } from "react-bootstrap";
 import PropTypes from "prop-types";
 
 import { groups } from "../../data/categories";
+import { propTypes } from "react-bootstrap/esm/Image";
 
 const StudentForm = forwardRef(
   ({ student, handleStudent, handleSubmit, validated }, ref) => {
@@ -91,6 +92,7 @@ StudentForm.propTypes = {
   handleStudent: PropTypes.func,
   handleSubmit: PropTypes.func,
   validated: PropTypes.bool,
+  editDebt: propTypes
 };
 
 const MemoStudentForm = memo(StudentForm);

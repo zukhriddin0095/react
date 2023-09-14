@@ -2,7 +2,7 @@ import { Table } from "react-bootstrap";
 import PropTypes from "prop-types";
 import { memo } from "react";
 
-const StudentsTable = ({ students }) => {
+const StudentsTable = ({ students, editDebt }) => {
   console.log("StudentTable");
   return (
     <Table striped bordered hover>
@@ -24,6 +24,10 @@ const StudentsTable = ({ students }) => {
               <td>{student.lastName}</td>
               <td>{student.group}</td>
               <td>{student.age}</td>
+              <button className="btn btn-primary m-3" onClick={editDebt}>
+                Edit
+              </button>
+              <button className="btn btn-danger">delete</button>
             </tr>
           ))
         ) : (
@@ -40,6 +44,7 @@ const StudentsTable = ({ students }) => {
 
 StudentsTable.propTypes = {
   students: PropTypes.array,
+  editDebt: PropTypes.func
 };
 
 const MemoStudentsTable = memo(StudentsTable);
